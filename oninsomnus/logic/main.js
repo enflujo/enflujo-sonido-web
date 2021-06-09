@@ -10,7 +10,7 @@ function init(){
     bolita = new Bolita;
     base = new Base;
     obstaculos = new Obstaculos;
-    obstaculos.arreglo(); 
+    obstaculos.arreglo();
 
     setInterval(draw, 10);
 
@@ -23,7 +23,8 @@ function draw(){
         bolita.mover();
         bolita.display();
         base.display();            
-        obstaculos.display(); 
+        obstaculos.display();
+        obstaculos.collision(bolita.x, bolita.y);
 
     } else {
         
