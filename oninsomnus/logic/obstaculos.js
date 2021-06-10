@@ -42,15 +42,27 @@ class Obstaculos {
         }
     }
 
-    collision(bolitaX, bolitaY){
+    collision(bolitaX, bolitaY, radio, bolitaDx, bolitaDy){
         for (var i = 0; i < this.columns; i++){
             for(var j = 0; j < this.rows; j++){
-                var b = this.obstaculos[i][j];
-                if(bolitaX > b.x && bolitaX < b.x + b.w && bolitaY > b.y && bolitaY < b.y + b.w){
-                    bolita.dy = - bolita.dy
-                    console.log(bolitaX, bolitaY);
-                    console.dir(b);
+                var o = this.obstaculos[i][j];
+                if(    bolitaX + radio + bolitaDx > o.x 
+                    && bolitaX + bolitaDx < o.x + o.w 
+                    && bolitaY + radio > o.y 
+                    && bolitaY < o.y + o.h){
+
+                    bolita.dx = - bolita.dx
+
                 }
+
+                if(    bolitaX + radio > o.x 
+                    && bolitaX < o.x + o.w 
+                    && bolitaY + radio + bolitaDy > o.y 
+                    && bolitaY + bolitaDy < o.y + o.h){
+
+                        bolita.dy = - bolita.dy
+
+                    }
 
             }
         }

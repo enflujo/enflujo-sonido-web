@@ -24,7 +24,7 @@ function draw(){
         bolita.display();
         base.display();            
         obstaculos.display();
-        obstaculos.collision(bolita.x, bolita.y);
+        obstaculos.collision(bolita.x, bolita.y, bolita.radio, bolita.dx, bolita.dy);
 
     } else {
         
